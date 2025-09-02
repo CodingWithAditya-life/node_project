@@ -8,7 +8,7 @@ const routesPerson = require("./routes/personRoutes");
 const PORT = process.env.PORT || 9142;
 
 app.get("/", function (req, res) {
-  res.send("Welcome to our Projects");
+  res.send("Welcome to our Projecs");
 });
 
 app.use(bodyParser.json());
