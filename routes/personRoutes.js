@@ -13,6 +13,19 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.post("/", async (req, res) => {
+  try {
+    const newPerson = new Person(req.body);
+    const savePerson = await newPerson.save();
+
+    console.log("data post");
+    res.status(200).json(savePerson);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
 router.put("/:id", async (req, res) => {
   try {
     const personId = req.params.id;
