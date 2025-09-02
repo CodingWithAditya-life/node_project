@@ -5,7 +5,7 @@ require("dotenv").config();
 
 const bodyParser = require("body-parser");
 const routesPerson = require("./routes/personRoutes");
-const PORT = process.env.PORT || 9142;
+const PORT = process.env.PORT || 7000;
 
 app.get("/", function (req, res) {
   res.send("Welcome to our Projecs");
@@ -14,6 +14,6 @@ app.get("/", function (req, res) {
 app.use(bodyParser.json());
 app.use("/person", routesPerson);
 
-app.listen(9142, () => {
-  console.log("Server running at http://localhost:9142");
+app.listen(PORT, () => {
+  console.log("Server running at http://localhost:7000");
 });
