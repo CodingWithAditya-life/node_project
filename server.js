@@ -15,5 +15,5 @@ app.use(bodyParser.json());
 app.use("/person", routesPerson);
 
 app.listen(PORT, () => {
-  console.log("Server running at http://localhost:7000");
+  console.log("listening on port 7000");
 });
