@@ -7,8 +7,16 @@ const bodyParser = require("body-parser");
 const routesPerson = require("./routes/personRoutes");
 const PORT = process.env.PORT || 7000;
 
-app.get("/", function (req, res) {
-  res.send("Welcome to our Projecs");
+// Middleware function
+const logRequest = (req, res, next) => {
+  console.log(
+    `${new Date().toLocaleString()} Request Made to : ${req.originalUrl}`
+  );
+  next();
+};
+
+app.get("/", logRequest, function (req, res) {
+  res.send("Welcome to our srinamika project");
 });
 
 app.use(bodyParser.json());
